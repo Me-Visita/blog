@@ -14,16 +14,16 @@ type Props = {
 
 const Index = ({ allPosts }: Props) => {
   const heroPost = allPosts[0]
-  const morePosts = allPosts.slice(1)
+  const morePosts = allPosts.slice(0)
   return (
     <>
       <Layout>
         <Head>
-          <title>Next.js Blog Example with {CMS_NAME}</title>
+          <title>{CMS_NAME}</title>
         </Head>
         <Container>
           <Intro />
-          {heroPost && (
+          {/* {heroPost && (
             <HeroPost
               title={heroPost.title}
               coverImage={heroPost.coverImage}
@@ -32,7 +32,7 @@ const Index = ({ allPosts }: Props) => {
               slug={heroPost.slug}
               excerpt={heroPost.excerpt}
             />
-          )}
+          )} */}
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
         </Container>
       </Layout>
